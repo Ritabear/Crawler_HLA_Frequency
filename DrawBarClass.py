@@ -5,25 +5,17 @@ import matplotlib.pyplot as plt
 
 class DrawBar:
     def __init__(self, labels, dataC, dataT):
+        # 生成資訊
         self.labels = labels
         self.dataC = dataC
         self.dataT = dataT
-    # 生成資訊
-    # labels = ['A*31:01:02', 'B*15:02:01', 'B*57:01:01', 'B*15:02:01', 'B*57:01:01']
-    # data1 = [0.0283, 0.0355, 0.0061, 0.0355, 0.0061]
-    # data2 = [0.0, np.nan, np.nan, np.nan, np.nan]
-        print(len(labels))
-        print(len(dataC))
-        print(len(dataT))
-
-    # def drawBar(labels, dataC):
 
     def drawDoubleBar(labels, dataC, dataT=[np.nan]):
-        width = 0.7
+        width = 0.4
         colors = ['#1f77b4', '#ff7f0e', '#2ca02c', 'r', 'b']
         xpos = np.arange(0, len(labels), 1)
 
-        # 生成柱状图
+        # 生成柱状圖
         fig, ax = plt.subplots(figsize=(10, 8))
         bars1 = plt.bar(xpos-width/2, dataC, align='center', width=width,
                         alpha=0.9, color='#1f77b4', label='China')
@@ -53,10 +45,3 @@ class DrawBar:
         # 展示結果
         plt.legend()
         plt.show()
-
-
-# labels = ['A*31:01:02', 'B*15:02:01', 'B*57:01:01', 'B*15:02:01', 'B*57:01:01']
-# data1 = [0.0283, 0.0355, 0.0061, 0.0355, 0.0061]
-# data2 = [0.0, np.nan, np.nan, np.nan, 0.0087]
-
-# draw = DrawBar.drawDoubleBar(labels, data1, data2)
