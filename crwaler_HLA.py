@@ -28,7 +28,10 @@ def main():
         page+"&hla_region=South-East+Asia&hla_selection="
     # 1.爬取網页
     TotalChina, TotalTaiwan = getData(baseurl)
+    # 3.處理數據
     Both, OnlyChina, OnlyTaiwan = dealData(TotalChina, TotalTaiwan)
+
+    # 4.畫圖
     # draw = DrawBar()
     # Pair
     labels = Both['Allele'].tolist()
@@ -96,7 +99,7 @@ def getData(baseurl):
     return TotalChina, TotalTaiwan
 
 
-# 得到指定一个URL的網页内容
+# 得到指定一个URL的網頁内容
 def askURL(url):
     head = {  # 模擬瀏覽器信息，向伺服器發送消息
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"

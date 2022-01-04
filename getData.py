@@ -15,5 +15,6 @@ for i in range(0, len(HLA_List)):
     for j in range(0, len(HLA_Split)):
         OnlyAllele.append(HLA_Split[j].replace(characters, ''))
 
+# print(len(OnlyAllele)) #175
 
 OnlyAllele = list(OrderedDict.fromkeys(OnlyAllele))
